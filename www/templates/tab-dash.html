@@ -1,0 +1,28 @@
+<ion-view view-title="Dashboard">
+
+  <ion-content class="padding">
+    <div class="item item-image padding" style="border: none; padding-top:20px"> 
+      <img src="img/icon.png" style="width: 20%; height: auto; border: none;">
+    </div>
+
+    <div class="row row-center">
+      <div class="col">
+        <button class="button button-block icon-left" ng-click="ScanContacts()" ng-class="{'ion-ios-close-outline button-assertive': !stopScan, 'ion-ios-search button-positive': stopScan}" ng-disabled=total==0 >{{ actionText }} Lookup ({{ total }})</button>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar style="height: auto !important;">
+    <div class="row">
+      <div class="list list-inset" style="width:100%">
+        <label>Credits balance: {{ credits }}</label>
+        <select class="item item-select" ng-model="selectedProduct">
+          <option ng-repeat="product in products" value="{{ product.id }}" ng-selected=product.id==selectedProduct >
+            {{ product.title.replace(appName, '') }}
+          </option>
+        </select>
+        <button class="button button-stable button-block icon-left ion-ios-cart-outline" ng-click="BuyCredit(selectedProduct)" ng-disabled=products.length==0>Purchase Credit</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,44 @@
+{
+  "name": "carrierlookupapp",
+  "version": "1.0.0",
+  "description": "carrierLookupApp: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^1.3.3",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "com.ionic.keyboard",
+    "cordova-plugin-whitelist",
+    {
+      "locator": "https://github.com/dbaq/cordova-plugin-contacts-phone-numbers.git",
+      "id": "com.dbaq.cordova.contactsPhoneNumbers"
+    },
+    {
+      "locator": "https://github.com/j3k0/cordova-plugin-purchase.git",
+      "id": "cc.fovea.cordova.purchase",
+      "variables": {
+        "": ""
+      }
+    },
+    "org.apache.cordova.dialogs",
+    {
+      "locator": "https://github.com/whiteoctober/cordova-plugin-app-version.git",
+      "id": "uk.co.whiteoctober.cordova.appversion"
+    },
+    "org.apache.cordova.network-information"
+  ],
+  "cordovaPlatforms": [
+    "android",
+    "ios"
+  ]
+}

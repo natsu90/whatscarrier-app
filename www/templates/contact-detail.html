@@ -1,0 +1,37 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{ contact.name }}">
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item>
+      <h2>Name</h2>
+      <p>{{ contact.name }}</p>
+      </ion-item>
+      <ion-item>
+      <h2>Number</h2>
+      <p>{{ contact.number }}</p>
+      </ion-item>
+      <ion-item>
+      <h2>Type</h2>
+      <p>{{ contact.number_type }}</p>
+      </ion-item>
+      <ion-item>
+      <h2>Carrier</h2>
+      <p>{{ contact.carrier_name }}</p>
+      </ion-item>
+    </ion-list>
+    <a ng-href="sms:{{ contact.number }}" class="button button-block button-calm icon-left ion-email">SMS</a>
+    <a ng-href="tel:{{ contact.number }}" class="button button-block button-positive icon-left ion-ios-telephone">Call</a>
+    <div class="item item-divider"> 
+      Settings
+    </div>
+    <ion-toggle ng-model="scanned.checked">
+      Scanned
+    </ion-toggle>
+    <button class="button button-block button-assertive icon-left ion-ios-trash" ng-click="delete(contact.id)">Delete</button>
+  </ion-content>
+</ion-view>

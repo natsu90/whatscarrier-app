@@ -1,0 +1,36 @@
+<ion-view view-title="Contacts">
+  <ion-content class="padding">
+    
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="RefreshContacts()"></ion-refresher>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Search" ng-model="query.searchStr" ng-change="Search()">
+    </label>
+
+    <ion-list>
+      <ion-item class="item-checkbox item-avatar item-icon-right" collection-repeat="contact in contacts" type="item-text-wrap">
+        <label class="checkbox">
+          <input type="checkbox" ng-checked=contact.checked==1 ng-disabled=true >
+        </label>
+        <h2>{{contact.name}}</h2>
+        <p>{{contact.number}} {{ contact.carrier_name != null ? '('+contact.carrier_name+')' : '' }}</p>
+        <i class="icon ion-chevron-left icon-accessory"></i>
+
+        <ion-option-button class="button-positive" ng-click="viewDetail(contact.id)">
+          More
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll
+      ng-if="!noMoreItemsAvailable"
+      icon="ion-loading-c"
+      on-infinite="loadMore()"
+      distance="10%">
+    </ion-infinite-scroll>
+  </ion-content>
+  <ion-footer-bar class="bar-positive tabs">
+    <a class="tab-item icon-left ion-loop" ng-click="ResyncContacts()">
+      Re-fetch Contacts
+    </a>
+  </ion-footer-bar>
+</ion-view>
