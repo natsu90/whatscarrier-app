@@ -6,3 +6,5 @@ https://forum.ionicframework.com/t/remove-hyperlinks-for-phone-numbers/18039/6
 https://forum.ionicframework.com/t/freezing-portrait-mode/390/7
 https://forum.ionicframework.com/t/cordova-cdvviewcontroller-h-file-not-found-in-xcode-7-1-beta/32232/6
 http://stackoverflow.com/questions/32165393/angularjs-break-foreach-in-http-success
+https://gist.github.com/botris/29d1ed19d0df6051c56f
+https://gist.github.com/th3m4ri0/acc2003adc7dffdbbad6
